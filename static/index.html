@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,56 +12,65 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
   </head>
   <body>
-	<h1>Flytteportalen</h1>
+    <div class="container">
+      <header class="d-flex flex-wrap justify-content-center py-3 mb-2">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+          <span class="fs-2">Flytteportalen</span>
+        </a>
+      </header>
+    </div>
 
-	<section style="background-color: #eee;">
-	<div class="container py-5">
-  
-	<div class="row justify-content-center mb-3">
-	<div class="col-md-12 col-xl-10">
-		<label for="adresse">Indtast din adresse:</label>
-		<div class="autocomplete-container">
-			<input type="text" id="adresse">
-		</div>
-	</div>
-	</div>
+    <section style="background-color: #eee;">
+      <div class="container py-5">
+        <div class="row justify-content-center mb-3">
+          <div class="col-md-12 col-xl-10">
+            <p>Skal du flytte og har du brug for internet, så hjælper vi dig med at finde din nye udbyder.</p>
+            <label for="adresse">Indtast din adresse:</label>
+            <div class="autocomplete-container">
+              <input type="text" id="adresse">
+            </div>
+          </div>
+        </div>
 
-	<div id="results"></div>
+        <div id="results"></div>
 
-  <template id="provider">
-    <div class="row justify-content-center mb-3">
-      <div class="col-md-12 col-xl-10">
-        <div class="card shadow-0 border rounded-3">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
-                <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                  <img src="" class="provider-logo w-100" />
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-6 col-xl-6">
-                <h5><span class="provider"></span> <span class="description"></span></h5>
-                <div class="mt-1 mb-0 text-muted small">
-                  <span class="speed"></span>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
-                <div class="d-flex flex-row align-items-center mb-1">
-                  <h4 class="mb-1 me-1 price"></h4>
-                </div>
-                <div class="d-flex flex-column mt-4">
-                  <a href="#" class="provider-link btn btn-primary btn-sm" role="button">Vælg</a>
+        <template id="provider">
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-12 col-xl-10">
+              <div class="card shadow-0 border rounded-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                      <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                        <img src="" class="provider-logo w-100" />
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <h5><span class="provider"></span> <span class="description"></span></h5>
+                      <div class="mt-1 mb-0 small">
+                        <span class="speed"></span>
+                      </div>
+                      <div class="mt-1 mb-0 small">
+                        <span>Brug rabatkoden <span class="bg-warning text-dark bg-warning text-dark px-1">FLYT100</span> og få 100 kr. i rabat</span>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                      <div class="d-flex flex-row align-items-center mb-1">
+                        <h4 class="mb-1 me-1 price"></h4>
+                      </div>
+                      <div class="d-flex flex-column mt-4">
+                        <a href="#" class="provider-link btn btn-success btn-sm" role="button">Gå til udbyder</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-	</template>
+        </template>
 
-  </div>
-</section>
+      </div>
+    </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>

@@ -6,14 +6,15 @@ dawaAutocomplete.dawaAutocomplete(document.getElementById("adresse"), {
   console.log(selected);
   console.log(selected.data.adgangsadresseid);
 
+  var results = document.querySelector("#results");
+  results.innerHTML = "";
+
   fetch(`/providers?dawa=${adr.id}&street=${adr.vejnavn}&number=${adr.husnr}&postalcode=${adr.postnr}`)
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-
-      var results = document.querySelector("#results");
+      
       var template = document.querySelector("#provider");
-      results.innerHTML = "";
           
       for (var key in data) {
         var clone = template.content.cloneNode(true);
@@ -22,8 +23,7 @@ dawaAutocomplete.dawaAutocomplete(document.getElementById("adresse"), {
         clone.querySelector(".provider").textContent = data[key].provider;
         clone.querySelector(".description").textContent = data[key].description;
         clone.querySelector(".price").textContent = data[key].price + " kr./md";
-        clone.querySelector(".speed").textContent = data[key].speed;
-        // clone.querySelector(".speed").textContent = data[key].downstream + "/" + data[key].upstream + " Mbps";
+        clone.querySelector(".speed").textContent = data[key].downstream + "/" + data[key].upstream + " Mbit";
         results.appendChild(clone);
       }
     });
